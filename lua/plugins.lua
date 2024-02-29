@@ -1,5 +1,14 @@
 require("lazy").setup({
-  { "rose-pine/neovim",   name = "rose-pine" }, -- Theme
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function(
+
+    )
+      require("rose-pine").setup {}
+      vim.cmd("colorscheme rose-pine")
+    end
+  }, -- Theme
   {
     'nvim-tree/nvim-web-devicons',
     config = function()
@@ -10,7 +19,7 @@ require("lazy").setup({
   'nvim-lua/plenary.nvim', -- Utility functions
   "nvim-tree/nvim-web-devicons",
   -- Auto completion
-  { 'github/copilot.vim', build = ':Copilot setup' },
+  { 'github/copilot.vim',              build = ':Copilot setup' },
 
   {
     "folke/which-key.nvim",
@@ -49,9 +58,10 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require('config.lualine').setup()
+      require('config.lualine')
     end
   },
+  'arkav/lualine-lsp-progress',
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -76,6 +86,7 @@ require("lazy").setup({
       require 'config.lsp'
     end
   },
+  { "folke/neodev.nvim", opts = {} },
   "williamboman/mason-lspconfig.nvim",
   -- cmp-nvim
   'onsails/lspkind.nvim',
