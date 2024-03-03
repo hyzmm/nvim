@@ -7,7 +7,7 @@ o.guifont = "Source Code Pro:h16"
 g.neovide_window_blurred = true
 g.neovide_floating_blur_amount_y = 2.0
 
-g.neovide_transparency = 0.6
+g.neovide_transparency = 0.8
 g.neovide_hide_mouse_when_typing = true
 g.neovide_theme = 'dark'
 -- g.neovide_fullscreen = true
